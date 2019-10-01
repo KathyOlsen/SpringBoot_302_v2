@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset=" UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <a href="/add">Add a To Do</a>
+    <br>
+    <div th:each="todo : ${todos}">
+        <h4 th:inline="text">[[${todo.taskname}]]</h4>
+        <p th:inline="text">Due: [[${todo.duedate}]]</p>
+        <p th:inline="text">Priority: [[${todo.priority}]]</p>
+    </div>
+</body>
+</html>
